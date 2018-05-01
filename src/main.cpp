@@ -11,6 +11,15 @@
 
 int main(int argc, char **argv)
 {
+  // define mode_0 to stop turtlebot
+  geometry_msgs::Twist mode_0;
+  mode_0.linear.x = 0;
+  mode_0.linear.y = 0;
+  mode_0.linear.z = 0;
+  mode_0.angular.x = 0;
+  mode_0.angular.y = 0;
+  mode_0.angular.z = 0;
+
 
     // define mode_1 linear and angular velocity
   geometry_msgs::Twist mode_1;
@@ -60,15 +69,15 @@ int main(int argc, char **argv)
 
 
   // set up an array to store all modes
-  std::array<geometry_msgs::Twist, 10> mode_list = {mode_1, mode_4, mode_3, \
-    mode_3, mode_3, mode_1, mode_3, mode_3, mode_4, mode_3};
+  std::array<geometry_msgs::Twist, 11> mode_list = {mode_1, mode_4, mode_3, \
+    mode_3, mode_3, mode_1, mode_3, mode_3, mode_4, mode_3, mode_0};
 
   ros::init(argc, argv, "pub_velocity_node");
 
   ros::NodeHandle n;
 
   // Advertize the publisher on the topic you like
-  // ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/pub_velocity", 1000);
+  // ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 1000);
 
   ros::Publisher pub = n.advertise<geometry_msgs::Twist>("robot1/mobile_base/commands/velocity", 1000);
   
@@ -99,7 +108,7 @@ int main(int argc, char **argv)
 
     }
 
-    if (index >= 0 && index < 10) {
+    if (index >= 0 && index < 11) {
 
         pub.publish(mode_list[index]);
 
