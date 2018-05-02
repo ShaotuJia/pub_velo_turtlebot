@@ -77,9 +77,9 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 
   // Advertize the publisher on the topic you like
-  // ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 1000);
+  ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 1000);
 
-  ros::Publisher pub = n.advertise<geometry_msgs::Twist>("robot1/mobile_base/commands/velocity", 1000);
+  // ros::Publisher pub = n.advertise<geometry_msgs::Twist>("robot1/mobile_base/commands/velocity", 1000);
   
   // loop rate
   ros::Rate loop_rate(10);
