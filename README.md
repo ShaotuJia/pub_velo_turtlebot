@@ -1,7 +1,7 @@
 # Real Robot Implementation: TurtleBot 3
 ## Brief
 This project uses the planned trajectory from Project 3 part 2 and publish it to Turtlebot.
-## Authors:
+## Authors
 - Shaotu Jia
 - Zejiang Zeng
 
