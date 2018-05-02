@@ -1,6 +1,9 @@
 # Real Robot Implementation: TurtleBot 3
 ## Brief
 This project uses the planned trajectory from Project 3 part 2 and publish it to Turtlebot.
+## Authors:
+- Shaotu Jia
+- Zejiang Zeng
 
 ## How to Run in Gazebo
 - Prerequisites: generate trajectory using the program of project 3 part 2. [project_3](https://github.com/ShaotuJia/ENPM661_Astar_RRL.git)
